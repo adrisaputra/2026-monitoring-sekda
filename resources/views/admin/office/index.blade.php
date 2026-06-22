@@ -99,9 +99,9 @@
             formData.append('_token', "{{ csrf_token() }}");
 
             // Kirim permintaan validasi ke controller via Ajax
-            var url = "{{ url('/office/validate') }}";
+            var url = "{{ url('/office/validate') }}/" + action;
             $.ajax({
-                url: url + "/" + action,
+                url: url,
                 type: "POST",
                 data: formData,
                 contentType: false, // Tidak mengatur contentType secara otomatis

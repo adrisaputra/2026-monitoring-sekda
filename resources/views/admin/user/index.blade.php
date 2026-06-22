@@ -124,7 +124,8 @@
                     $('.is-invalid').removeClass('is-invalid'); // Hapus kelas is-invalid dari bidang-bidang yang divalidasi
 
                     if (action === "Simpan") {
-                        send();
+                        // send();
+                        console.log("Validasi berhasil untuk aksi Simpan. Lanjutkan dengan fungsi send().");
                     } else {
                         update(id_user);
                     }

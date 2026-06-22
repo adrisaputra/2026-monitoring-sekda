@@ -9,15 +9,29 @@
     <link href="{{ asset('backend/assets/css/loader.css') }}" rel="stylesheet" type="text/css" />
     <script src="{{ asset('backend/assets/js/loader.js') }}"></script>
 
+   
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap" rel="stylesheet">
-    <link href="{{ asset('backend/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('backend/bootstrap/css/bootstrap.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('backend/assets/css/plugins.css') }}" rel="stylesheet" type="text/css" />
     <!-- END GLOBAL MANDATORY STYLES -->
 
-    <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM STYLES -->
-    <link href="{{ asset('backend/plugins/apex/apexcharts.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('backend/assets/css/dashboard/dash_2.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('backend/assets/css/dashboard/dash_1.css') }}" rel="stylesheet" type="text/css" />
+
+    <link href="{{ asset('backend/plugins/flatpickr/flatpickr.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('backend/plugins/flatpickr/custom-flatpickr.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('backend/plugins/noUiSlider/nouislider.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('backend/plugins/noUiSlider/custom-nouiSlider.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('backend/plugins/bootstrap-range-Slider/bootstrap-slider.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('backend/assets/css/scrollspyNav.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('backend/plugins/animate/animate.css') }}" rel="stylesheet" type="text/css" />
+    <script src="{{ asset('backend/plugins/sweetalerts/promise-polyfill.js') }}"></script>
+    <link href="{{ asset('backend/plugins/sweetalerts/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('backend/plugins/sweetalerts/sweetalert.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('backend/assets/css/components/custom-sweetalert.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('backend/plugins/notification/snackbar/snackbar.min.css') }}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('backend/plugins/select2/select2.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('backend/assets/css/forms/switches.css') }}">
     <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
 
 </head>
@@ -691,7 +705,6 @@
     <!-- END MAIN CONTAINER -->
 
     <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
-    <!-- <script src="{{ asset('backend/assets/js/libs/jquery-3.1.1.min.js') }}"></script> -->
     <script src="{{ asset('backend/bootstrap/js/popper.min.js') }}"></script>
     <script src="{{ asset('backend/bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('backend/plugins/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
@@ -713,9 +726,5 @@
     <script src="{{ asset('backend/plugins/notification/snackbar/snackbar.min.js') }}"></script>
     <!-- END PAGE LEVEL PLUGINS -->
 
-    <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
-    <script src="{{ asset('backend/plugins/apex/apexcharts.min.js') }}"></script>
-    <script src="{{ asset('backend/assets/js/dashboard/dash_2.js') }}"></script>
-    <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
 </body>
 </html>

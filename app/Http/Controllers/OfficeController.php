@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Office;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use Yajra\DataTables\DataTables;
 
 class OfficeController extends Controller
@@ -45,18 +46,31 @@ class OfficeController extends Controller
 
     public function validate(Request $request, $action)
     {
-        if ($request->ajax()) {
+       if($request->ajax()) {
+
+            $attributes = [
+                'name' => 'Nama OPD',
+            ];
 
             if($action==="Simpan"){
-                $request->validate([
-                    'name' => 'required|string|max:255',
-                ]);
-            } else {
-                $request->validate([
+                $rules = [
                     'name' => 'required|string|max:255'
-                ]);
+                ];
+            } else {
+                    $rules = [
+                    'name' => 'required|string|max:255'
+                ];
             }
-    
+            
+            $validator = Validator::make($request->all(), $rules, [], $attributes);
+
+            if ($validator->fails()) {
+                return response()->json([
+                    'success' => false,
+                    'errors' => $validator->errors()
+                ], 422);
+            }
+                    
             return response()->json(['success' => true]);
         }
     }
