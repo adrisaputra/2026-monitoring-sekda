@@ -14,19 +14,25 @@
 				<input type="hidden" class="form-control" name="id" id="id_user"/>
 				<div class="form-group">
 					<p>{{ __('Nama Pengguna') }} <span class="required" style="color: #dd4b39;">*</span></p>
-					<input type="text" class="form-control" name="name" id="name">
+					<input type="text" class="form-control form-control-sm" name="name" id="name">
 					<div id="name-error" class="fv-plugins-message-container invalid-feedback" style="display: block;"></div>
 				</div>
 						
 				<div class="form-group">
 					<p>{{ __('Email') }} <span class="required" style="color: #dd4b39;">*</span></p>
-					<input type="text" class="form-control" name="email" id="email">
+					<input type="text" class="form-control form-control-sm" name="email" id="email">
 					<div id="email-error" class="fv-plugins-message-container invalid-feedback" style="display: block;"></div>
 				</div>
 					
 				<div class="form-group">
 					<p>{{ __('Grup') }} <span class="required" style="color: #dd4b39;">*</span></p>
-                    <select class="form-control form-control-sm" name="group_id" id="group_id">
+                    <select class="form-control form-control-sm" name="group_id" id="group_id" onchange=" if (this.selectedIndex==1){ 
+												document.getElementById('office').style.display = 'none';
+											} else if (this.selectedIndex==2){ 
+												document.getElementById('office').style.display = 'none'; 
+											} else if (this.selectedIndex==3){ 
+												document.getElementById('office').style.display = 'inline'; 
+											};">
                         <option value="">- Pilih Grup -</option>
                         @foreach($group as $v)
                             <option value="{{ $v->id }}">{{ $v->name }}</option>
@@ -34,16 +40,29 @@
                     </select>
 					<div id="group_id-error" class="fv-plugins-message-container invalid-feedback" style="display: block;"></div>
 				</div>
-						
+			
+				<span id="office" style="display:none;">
+					<div class="form-group">
+						<p>{{ __('OPD') }} <span class="required" style="color: #dd4b39;">*</span></p>
+						<select class="form-control form-control-sm" name="office_id" id="office_id">
+							<option value="">- Pilih OPD -</option>
+							@foreach($office as $v)
+								<option value="{{ $v->id }}">{{ $v->name }}</option>
+							@endforeach
+						</select>
+						<div id="office_id-error" class="fv-plugins-message-container invalid-feedback" style="display: block;"></div>
+					</div>
+				</span>
+
 				<div class="form-group">
 					<p>{{ __('Password') }} <span class="required" style="color: #dd4b39;">*</span></p>
-					<input type="password" class="form-control" name="password" id="password">
+					<input type="password" class="form-control form-control-sm" name="password" id="password">
 					<div id="password-error" class="fv-plugins-message-container invalid-feedback" style="display: block;"></div>
 				</div>
 						
 				<div class="form-group">
 					<p>{{ __('Konfirmasi Password') }} <span class="required" style="color: #dd4b39;">*</span></p>
-					<input type="password" class="form-control" name="password_confirmation" id="password_confirmation">
+					<input type="password" class="form-control form-control-sm" name="password_confirmation" id="password_confirmation">
 					<div id="password_confirmation-error" class="fv-plugins-message-container invalid-feedback" style="display: block;"></div>
 				</div>
 								

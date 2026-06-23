@@ -97,6 +97,7 @@
             var name = $('#name').val();
             var email = $('#email').val();
             var group_id = $('#group_id').val();
+            var office_id = $('#office_id').val();
             var password = $('#password').val();
             var password_confirmation = $('#password_confirmation').val();
 
@@ -106,6 +107,7 @@
             formData.append('name', name);
             formData.append('email', email);
             formData.append('group_id', group_id);
+            formData.append('office_id', office_id);
             formData.append('password', password);
             formData.append('password_confirmation', password_confirmation);
             formData.append('_token', "{{ csrf_token() }}");
@@ -124,8 +126,7 @@
                     $('.is-invalid').removeClass('is-invalid'); // Hapus kelas is-invalid dari bidang-bidang yang divalidasi
 
                     if (action === "Simpan") {
-                        // send();
-                        console.log("Validasi berhasil untuk aksi Simpan. Lanjutkan dengan fungsi send().");
+                        send();
                     } else {
                         update(id_user);
                     }
@@ -215,11 +216,14 @@
                 document.getElementById("name").value = response.data.name;
                 document.getElementById("email").value = response.data.email;
                 document.getElementById("group_id").value = response.data.group_id;
+                document.getElementById("office_id").value = response.data.office_id;
                 if(response.data.group_id == 3){
                     document.getElementById("name").readOnly = true;
                 } else {
                     document.getElementById("name").readOnly = false;
                 }
+
+                togglePositionInput(response.data.group_id);
             },
             error: function (xhr) {
                 // Tangani kesalahan jika pengiriman formulir gagal
@@ -227,6 +231,14 @@
                 console.error("Error pengiriman formulir:", xhr);
             }
         });
+    }
+
+    function togglePositionInput(value) {
+        if (value === 3) {
+            document.getElementById('office').style.display = 'inline';
+        } else {
+            document.getElementById('office').style.display = 'none';
+        }
     }
 
     // Update Data

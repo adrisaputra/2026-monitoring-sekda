@@ -14,7 +14,7 @@
 				<input type="hidden" class="form-control" name="id" id="id_office"/>
 				<div class="form-group">
 					<p>{{ __('Nama OPD') }} <span class="required" style="color: #dd4b39;">*</span></p>
-					<input type="text" class="form-control" name="name" id="name">
+					<input type="text" class="form-control form-control-sm" name="name" id="name">
 					<div id="name-error" class="fv-plugins-message-container invalid-feedback" style="display: block;"></div>
 				</div>
 								
