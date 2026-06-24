@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Split Screen Dinamis</title>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap" rel="stylesheet">
     <style>
         /* Reset & Base Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Quicksand', sans-serif;
         }
 
         body {
@@ -118,9 +119,23 @@
         }
 
         /* Variasi Warna Alert */
-        .bg-success { background-color: #def7ec; border-left: 5px solid #0e9f6e; color: #03543f; }
-        .bg-danger  { background-color: #fde8e8; border-left: 5px solid #f98080; color: #9b1c1c; }
-        .bg-warning { background-color: #fef08a; border-left: 5px solid #eab308; color: #713f12; }
+        .bg-success { 
+            background-color: #e8f5e9; /* Green 50 */
+            border-left: 5px solid #4caf50; /* Green 500 */
+            color: #1b5e20; /* Green 900 */
+        }
+
+        .bg-danger { 
+            background-color: #ffebee; /* Red 50 */
+            border-left: 5px solid #f44336; /* Red 500 */
+            color: #b71c1c; /* Red 900 */
+        }
+
+        .bg-warning { 
+            background-color: #fffde7; /* Yellow 50 */
+            border-left: 5px solid #fbc02d; /* Yellow 700 (lebih kontras dari 500) */
+            color: #f57f17; /* Yellow 900 */
+        }
 
         .alert h4 {
             font-size: 15px;

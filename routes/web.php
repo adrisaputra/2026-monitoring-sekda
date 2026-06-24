@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DataController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\OfficeController;
@@ -30,6 +31,21 @@ Route::get('/', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
+Route::middleware(['role:Administrator,Admin OPD'])->group(function () {
+    
+    Route::get('/data', [DataController::class, 'index'])->name('datas.index');
+    Route::get('/data/list', [DataController::class, 'get_data_index'])->name('datas.list');
+    Route::post('/data/store', [DataController::class, 'store']);
+    Route::post('/data/validate/{action}', [DataController::class, 'validate']);
+    Route::get('/data/edit/{data}', [DataController::class, 'edit']);
+    Route::put('/data/edit/{data}', [DataController::class, 'update']);
+    Route::get('/data/delete/{data}',[DataController::class, 'delete']);
+
+});
+        
+
+Route::middleware(['role:Administrator'])->group(function () {
+    
     Route::get('/office', [OfficeController::class, 'index'])->name('offices.index');
     Route::get('/office/list', [OfficeController::class, 'get_office_index'])->name('offices.list');
     Route::post('/office/store', [OfficeController::class, 'store']);
@@ -46,3 +62,7 @@ Route::post('/logout', [LoginController::class, 'logout']);
     Route::get('/user/edit/{user}', [UserController::class, 'edit']);
     Route::put('/user/edit/{user}', [UserController::class, 'update']);
     Route::get('/user/delete/{user}',[UserController::class, 'delete']);
+
+});
+        
+    
